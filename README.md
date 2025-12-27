@@ -1,9 +1,9 @@
 <p align="center">
   <strong>-------></strong>
-  <a href="/README.md">Русский</a> |
-  <a href="/docs/README.en.md">English</a> |
-  <a href="/docs/README.es.md">Spanish</a> |
-  <a href="/docs/README.zh.md">Chinese</a> |
+  <a href="/README.md">Russian</a> |
+  <a href="/README.en.md">English</a> |
+  <a href="/README.es.md">Spanish</a> |
+  <a href="/README.zh.md">Chinese</a> |
   <strong><-------</strong>
 </p>
 
@@ -25,31 +25,29 @@
 </div>
 
 <h1 align="center"> 
-BP To CPP Converter — A Plugin for Seamless Conversion of Blueprint to Readable C++
+BP To CPP Converter — A Plugin for Seamless Translation of Blueprints to Readable C++
 </h1>
 
 <h3 align="center"> 
-The final code includes the complete conversion of functions from Blueprint nodes to C++.
+The final code includes complete conversion of functions from Blueprint nodes to C++.
 </h3>
 
 <h2 align="center"> 
     ⚠️ Disclaimer ⚠️
 </h2> 
 <p align="center">
-  The author assumes no responsibility for any potential consequences of using this project.
-  By using the materials of this repository, you automatically agree to the terms of the associated license agreement.
+  The author is not responsible for any consequences of using this project. By using the repository materials, you automatically agree to the associated licensing terms.
 </p>
 
 <details> 
   <summary align="center">⚠️Full Text⚠️</summary>
 
-1. By using the materials of this repository, you automatically agree to the terms of the associated license agreement.
+1. By using the repository materials, you automatically agree to the associated licensing terms.
 
-2. The author provides no warranties, express or implied, as to the accuracy, completeness, or fitness of this material for any specific purposes.
+2. The author makes no guarantees, either expressed or implied, regarding the accuracy, completeness, or suitability of this material for any specific purpose. 
+3. The author is not responsible for any damages, including direct, indirect, incidental, consequential, or special damages resulting from the use or inability to use this material or its accompanying documentation, even if previously notified of the possibility of such damages.
 
-3. The author is not liable for any damages, including but not limited to direct, indirect, incidental, consequential, or special damages, arising from the use or inability to use this material or its accompanying documentation, even if advised of the possibility of such damages.
-
-4. By using this material, you acknowledge and accept all risks associated with its application. Furthermore, you agree that the author cannot be held responsible for any issues or consequences arising from its use.
+4. By using this material, you acknowledge and accept all risks associated with its application. Additionally, you agree that the author cannot be held accountable for any issues or consequences arising from its use.
 
 </details>
 
@@ -57,12 +55,12 @@ The final code includes the complete conversion of functions from Blueprint node
 * * * * * * * * * * * * * * * * * * 
 
 <h1 align="center"> 
-Introduction & Warning
+Introduction and Warning
 </h1>
 
-> ⚠️ **IMPORTANT WARNING**
+> ⚠️ **Important Warning**
 > 
-> This plugin is currently in active development. Using the current version may result in errors in the generated code. Many of these errors are resolved during development, but some stem from fundamental limitations of the Unreal Engine where many elements do not fully support reflection.
+> The plugin is currently under active development. Errors may occur in the generated code when using the current version. Many of these errors are being fixed during development, but some stem from fundamental limitations of the Unreal Engine, where many elements lack full reflection support.
 
 <h1 align="center"> 
 Plugin Overview
@@ -71,17 +69,17 @@ Plugin Overview
 <details>
   <summary align="center">📖 Detailed Description</summary>
 
-**BP To CPP Converter** is a specialized plugin for Unreal Engine, designed for the automatic conversion of Blueprint logic into readable C++ code. This plugin addresses the challenge of migrating visual programming into native code, which is especially useful for:
+**BP To CPP Converter** is a specialized plugin for Unreal Engine designed to automatically convert Blueprint logic into readable C++ code. The plugin addresses the challenges of migrating visual programming into native code, particularly useful for:
 
-- **Performance Optimization** – Transitioning from Blueprint to C++ for performance-critical areas.
-- **Project Refactoring** – Structuring code bases systematically.
-- **Learning C++** – Understanding how Blueprint constructions translate into native code.
+- **Performance Optimization** – Transitioning from Blueprint to C++ for performance-critical sections
+- **Project Refactoring** – Structuring the code base systematically
+- **C++ Learning** – Understanding how Blueprint constructs translate into native code
 
 ### Key Features:
-- **Seamless Conversion** – Ensures functionality is preserved during conversion.
-- **Support for Core Structures** – Blueprint, Interface, Struct, Enum.
-- **Flexible Configuration** – Adapts to specific project needs.
-- **Editor Integration** – User-friendly UI for managing the process.
+- **Seamless Conversion** – Functionality preserved during the conversion process
+- **Support for Core Structures** – Blueprint, Interface, Struct, Enum
+- **Flexible Customization** – Adaptable to specific project needs
+- **Editor Integration** – User-friendly UI for management and control of the process
 
 </details>
 
@@ -92,30 +90,30 @@ Plugin Overview
 ## 📚 Table of Contents
 
 ### 🎯 General Information
-1. [Introduction & Warning](#introduction--warning)
+1. [Introduction and Warning](#introduction-and-warning)
 2. [Plugin Overview](#plugin-overview)
 3. [EU_NativizationTool - Management Interface](#eu_nativizationtool---management-interface)
 
 ### 🏗️ Technical Aspects
-4. [Internal Architecture – Working Principles](#internal-architecture--working-principles)
+4. [Internal Architecture - Operational Principles](#internal-architecture--operational-principles)
 5. [Additional Useful Information](#additional-useful-information)
 
 ### 🧩 Description
 6. [🧩 Plugin Description](#-plugin-description)
 
 ### 🚀 Getting Started
-7. [Preparation](#preparation)
-8. [Usage Example](#usage-example)
+7. [Getting Started](#getting-started)
+8. [Example Usage](#example-usage)
 
-### ⚙️ Settings & Configuration
+### ⚙️ Settings and Configuration
 9. [Run Nativization Settings](#run-nativization-settings)
-10. [Other Actions & Settings](#other-actions--settings)
-11. [Nativization Settings](#nativization-settings)
+10. [Other Actions and Settings](#other-actions-and-settings)
+11. [Nativization Settings Configuration](#nativization-settings-configuration)
 
-### 📋 Features & Limitations
-12. [Features & Limitations](#additional-useful-information)
+### 📋 Features and Limitations
+12. [Features and Limitations](#additional-useful-information)
 
-### 📜 License & Documentation
+### 📜 License and Documentation
 13. [📜 License](#-license)
 
 ---
@@ -130,37 +128,37 @@ Plugin Overview
 
 
 <h1 align="center"> 
-Internal Architecture – Working Principles
+Internal Architecture - Operational Principles
 </h1>
 
 <details>
   <summary align="center">⚙️ Expand Description</summary>
 
-Generally, the plugin works as follows:
-- First, it identifies all dependent assets. These are automatically included in the list for code generation.
-- Then, code is generated for each asset. Four main structures are supported: regular Blueprint (including components and more), Interface, Struct, and Enum. It's worth discussing the generation of standard Blueprints in more detail.
+Here's an overview of how the plugin works.
+- First, it searches all dependent assets, which are included in the generation list by default.
+- Then, code generation for each asset is performed. Four structures are supported: regular Blueprint (including components and more), Interface, Struct, and Enum. Detailed information primarily pertains to the processing of regular Blueprint.
 
-The core parsing is handled by registered BaseTranslatorObject derivatives, or simply Translators, set in the plugin settings. These periodically modify or use the algorithm described below.
+The core of parsing is registered BaseTranslatorObject inheritors, or more simply, Translators. They periodically modify the algorithm outlined below.
 
-Blueprints first generate EntryNodes. Instead of using ready-made Functions, the plugin breaks them into a series of nodes that are only partially equivalent to the original Functions. Most importantly, the final breakdown ensures that no sequence of Entry Nodes is cyclic. Translators adjust whether to loop back a node, whether temporary Entry Nodes should be generated, and whether they should be generated at all.
+Blueprints initially generate EntryNodes. Instead of using the ready-made Function, the plugin divides nodes into a series partially equivalent to the original Function. More importantly, the final division ensures that no sequence of Entry Nodes is cyclic. Translators modify whether the node should form a cycle, whether temporary Entry Nodes should be generated, or whether they should be generated at all.
 
-Next, Includes are generated separately for CPP and H files. Includes are generated by parsing variables, nodes, parent classes, interfaces, etc. Translators process nodes and propose their specific includes. To avoid cyclic includes, all object references are declared solely in the CPP file and only their forward declaration is included in the Header file. Header and CPP includes are mutually exclusive.
+Afterwards, Includes are generated separately for CPP and H. They are produced by parsing variables, nodes, parent classes, interfaces, and more. Translators manage nodes and suggest their includes. To avoid cyclic includes, all object references are declared exclusively in the CPP file and preliminarily introduced in the Header file. Includes in Header and CPP exclude each other.
 
-Next, the CS (C++ Script) is generated.
-The final CS, along with other modifications to the existing files in the module, applies only changes to the file rather than replacing the entire file.
+Next comes CS generation. The resulting CS file, as with other module files, only applies changes to the existing file rather than completely replacing it.
 
-Translators also affect the CS.
+Translators also influence the CS.
 
-Then, separate generation of Header and CPP follows.
+After that, both Header and CPP are generated separately.
 
-Header generation is quite straightforward. The main class elements are traversed, especially its Property, Function, and Delegate, which are then declared within the class. Additionally, constructor and SetupInputComponent are declared, but only if the relevant translator is activated. Larger functions and variables are marked with the closest Blueprint-matching U-macros. Translators can also add new variables to the Header.
+Header generation is relatively straightforward. The process involves iterating through essential elements of the class, specifically its Properties, Functions, Delegates, and declaring them within the class. Constructors and SetupInputComponent declarations are additionally generated, but only if the translator is activated. Functions and variables will have U macros that are closest to Blueprint. Translators can be used to add new variables to the header.
 
-The CPP code is generated after the Header. Supporting functions for Header and CPP, such as the constructor and SetupInputComponent, are implemented.
-The constructor iterates over all FProperty contained within the Actor and its components, identifies inconsistencies, filters mostly those variables inaccessible to Blueprint (and thus derived from other variables), cross-references with the Getter-Setter array, and subsequently initializes all differing variables with their modified values. For structures with no constructor registered in Nativization Settings, a special ManyLineInitialization is used, constructed on the principle of default initialization via cloning, recursively, using the copy constructor.
+The CPP code is generated after the Header. Supporting functions for Header and CPP, such as constructors and SetupInputComponent, are implemented.
 
-The process then continues with a pass through the Node. The traversal may be direct (forming the main execution sequence) or reverse, primarily for all non-Exec pins. Generation starts from the corresponding EntryNode, checks for the absence of a translator, and proceeds to the next node, appending its result to the current one via recursion. Translators, particularly those controlling the flow, function similarly by intercepting recursion through their Out Exec pins. The reverse path structurally resembles the direct path but is slightly more complex. In general, the process is similar but includes adjustments for how split pins are processed.
+The constructor is generated by iterating through all FProperties within the actor and its components. It identifies non-equivalences, filters primarily variables inaccessible to Blueprint (and consequently, derived from other variables), references the Getter-Setter array, then sequentially initializes differing variables with their modified values. For structures lacking registered constructors in Nativization Settings, a special ManyLineInitialization is used, built on initializing from a default recursively using a copy constructor.
 
-Translators process everything except Event nodes, Function Entry, and Enhance Nodes.
+Node traversal follows, including direct traversal forming execution sequence and reverse traversal for all non-exec pins. The generation starts with corresponding EntryNode, checks if no translator exists, proceeds to the next node, adding its result via recursion. Translators, especially those controlling the flow, function similarly, intercepting recursion at their Out Exec pins. Reverse traversal is structurally similar, though slightly more complex, adding adjustments for handling split pins.
+
+Translators handle everything except Event nodes, Function Entry, and Enhance Nodes.
 
 </details>
 
@@ -173,21 +171,19 @@ Additional Useful Information
 <details>
   <summary align="center">⚙️ Expand Description</summary>
 
-It should be noted that there are two approaches to generation in Blueprint and, in general, how exactly a Blueprint is initialized.
-During the compilation of a Blueprint, its code is simplified into bytecode. Most data is simplified for optimization purposes. During the compilation phase, components such as FProperty and UFunction appear within Blueprint as reflection objects. All of this is derived from the original Blueprint and its raw data.
-Hypothetically, parsing the original Blueprint is much freer but also more complex.
-Parsing the compiled part of the Blueprint, however, is much more precise and less susceptible to errors. Highly sophisticated plugins for pure nativization likely rely on the compiled part rather than the raw data.
+It is important to note that there are two approaches to generation in Blueprint and how exactly Blueprint initializes itself. During the compilation of Blueprint, its code is simplified into bytecode for optimization. This stage introduces FProperties and UFunctions as reflection objects based on the original Blueprint and its raw data.
 
-My plugin employs a combined approach. This is because the compiled part is generally convenient for parsing but comes with several issues. Initially, I leaned toward parsing the compiled part and later transitioned to parsing raw data. This created a certain systemic contradiction, which I chose to put aside for now.
+Hypothetically, parsing the original Blueprint offers greater flexibility but is more complex. Conversely, parsing the compiled part ensures greater accuracy and resilience to errors. Advanced plugins focused on pure nativization likely use the compiled portion instead of the original.
 
-The plugin supports macros/Composite but not cyclic macros, which are not pre-defined in the translator system. This is partly due to the plugin's design ideology, where code processes macros or composite nodes by unfolding them during parsing. This is implemented thanks to a stored Generated Code. Hypothetically, cyclic macros are not particularly difficult to parse, but they inevitably lead to code pollution with a massive number of generated functions, which are already abundant in the final code. Furthermore, most cyclic macros generally have simple structures in C++ code, so creating a specific translator for your needs is likely a better solution than attempting inclusion.
+My plugin employs a combinatorial approach. This is because the compiled part is convenient for parsing but comes with many issues. Initially inclined to parse the compiled portion, I transitioned to parsing raw data later on, resulting in certain systemic contradictions which were intentionally disregarded.
 
-Edit InLine Object, Instance Struct, all non-standard objects, replacement of components in Child Actors are not supported.
+The plugin supports Macros / Composites but excludes cyclic macros not pre-registered in the translator system. This limitation partly stems from how code processes macros or composite nodes. Macros are unpacked during code parsing through stored Generated Bode. Hypothetically, cyclic macros can be parsed but inevitably pollute the code with numerous generated functions already present in the final code. Additionally, most cyclic macros typically have quite simple constructs in C++ code. Therefore, creating a custom translator for specific needs seems more effective than attempting an addition.
+
+Unsupported features include Edit Inline Object, Instance Struct, all non-standard objects, and component swapping in Child Actors.
 
 </details>
 
 * * * * * * * * * * * * * * * * * * 
-
 
 
 
@@ -200,13 +196,13 @@ Edit InLine Object, Instance Struct, all non-standard objects, replacement of co
 <details>
   <summary align="center">⚙️ Expand Description</summary>
 
-BP To CPP Converter is a plugin that provides seamless translation of Blueprints into readable C++. With a single click, it allows the conversion of Blueprint schematics into C++ code. The transformation process is called nativization, which, strictly speaking, is a misnomer. The final code includes the complete transformation of functions from Blueprint nodes into C++ code.
+BP To CPP Converter – a plugin provides a seamless translation of Blueprints into readable C++ code. It allows quick conversion of Blueprint schemas into C++ with a single click. The processing is referred to as nativization, though technically it's transition via translation. The final code encompasses full function conversion from Blueprint nodes into C++.
 
-The core of the project is the Editor Widget **EU_NativizationTool**, which is the key to control. Let's break it down further:
+The project core is the Editor Widget **EU_NativizationTool** which serves as the main control tool:
 
 Three tabs:
-1. **Run Nativization** – Main tab to start the nativization process.
-2. **Apply From Cache Nativization Result** – Main tab to transfer nativized Actor results into actual code.
+1. **Run Nativization** – Main tab for starting nativization.
+2. **Apply From Cache Nativization Result** – Main tab for transferring nativized Actor results into functional code.
 3. **Other Actions** – Auxiliary utilities for the plugin.
 
 </details>
@@ -218,7 +214,7 @@ Three tabs:
 </h2>
 
 <h1 align="center"> 
-Preparation
+Getting Started
 </h1>
 
 <div align="center">
@@ -228,7 +224,7 @@ Preparation
 <details>
   <summary align="center">⚙️ Expand Description</summary>
 
-When first using the plugin, I strongly recommend initializing the **BlueprintNativizationModule**. This module serves as the space where you save all C++ codes for subsequently transferring existing Blueprint Assets to them. The resulting code will be structured. To initialize, go to Other Action, click the **Initialize Blueprint Initialization Module** button, and recompile the project. If everything is done correctly, the module status at the top of your toolbar will change. This action needs to be performed ONLY ONCE BEFORE STARTING WORK.
+Before using the plugin, it is strongly recommended to initialize the module **BlueprintNativizationModule**. This module serves as a space for saving all resulting C++ codes, used for transferring existing Blueprint assets onto them. The generated code will be structurally organized. To initialize, go to Other Action, click Initialize Blueprint Initialization Module, and recompile the project. If done correctly, the module status at the top of your toolbar will change. This action should ONLY be performed ONCE BEFORE STARTING WORK.
 
 </details>
 
@@ -239,7 +235,7 @@ When first using the plugin, I strongly recommend initializing the **BlueprintNa
 </h2>
 
 <h1 align="center"> 
-Usage Example
+Example Usage
 </h1>
 
 <div align="center">
@@ -249,15 +245,15 @@ Usage Example
 <details>
   <summary align="center">⚙️ Expand Description</summary>
 
-1. Go to the **Run Nativization** tab.
-2. Specify in Blueprints any of your assets.
+1. Navigate to the **Run Nativization** tab.
+2. Specify any asset in the Blueprints field.
    - Ensure the Blueprint is compiled and saved.
    - You can specify one or multiple assets.
-   - All entities specified in Blueprints, as well as those dependent on them, will also be subject to nativization.
-3. Press the **Apply** button.
-   - Below, in the editor, you'll see the final code.
+   - All entities specified in Blueprints, as well as those dependent on Blueprints, will be subjected to nativization.
+3. Click the **Apply** button.
+   - At the bottom of the editor, you'll view the resulting code.
 
-To test the plugin, you may use your own or try **TestNativizationActor** or any other from the **Tests** folder.
+To test the plugin functionality, use your own asset, **TestNativizationActor**, or any item from the Tests folder.
 
 </details>
 
@@ -283,57 +279,57 @@ Run Nativization Settings
 
 ### Generate Code One Function
 
-Allows code generation for only one selected function. Check **True**, and select the function name in the **Function Name** field. Functions can be generated as a series if multiple functions exist. For example, this occurs when an input action function or a function is broken into sub-functions during nativization.
+Allows generation of code for a selected function only. Check True and specify the function name in the Function Name field. Functions can be generated in series if multiple are selected, e.g., situations where Input Action functions are chosen, or functions subdivided during nativization.
 
 ---
 
 ### Transform Only One File Code
 
-Generates code only for the currently specified Blueprint, ignoring all other dependency recursion.
+Generates code only for directly specified Blueprint, ignoring all dependency recursion.
 
 ---
 
 ### SaveToFile
 
-Allows saving the entire result to a file. This feature and many others will not function correctly if you have not initialized the BlueprintNativizationModule.
+Enables saving all results to file. This function and subsequent ones won’t work correctly without initializing the BlueprintNativizationModule.
 
-It is often considered good practice to leave all references to assets on the Blueprint side.
+It's generally advised to keep asset references managed by Blueprint.
 
-**Left All Asset Ref In Blueprint** – A flag to achieve this functionality. Otherwise, all references will be hardcoded in C++.
+**Left All Asset Ref In Blueprint** – the flag enabling this functionality. Otherwise, all references will be explicitly written into C++.
 
 ---
 
 ### Visualization
 
-Flags that determine what is displayed in the editor below. You can disable Header or CPP code display.
+Flags determining what is displayed below in the editor. You can disable Header or CPP code.
 
 ---
 
 ### SaveOutputFolder
 
-Determines where the generated C++ code should be saved. If left empty, it will save files in the initialized BlueprintNativizationModule with proper folder distribution.
+Determines where to save the resulting C++ code. If empty, the output will be saved in the initialized BlueprintNativizationModule, correctly distributed across folders.
 
 ---
 
 ### Hot Reload and Replace
 
-An experimental feature that allows automatically replacing Blueprints with the resulting C++ class without restarting the project. As it might cause issues, **Save Cache** is often used instead.
+An experimental feature for automatically replacing a Blueprint with its generated C++ class without restarting the project. Contains issues and hence mostly Save Cache is utilized.
 
 ---
 
 ### Save Cache
 
-Retains information about which objects were generated from what. This helps to fix errors and recompile the project while preserving the ability to replace Blueprints with the generated C++ code between UE sessions.
+Saves knowledge about generated objects, allowing fixes and project recompilation while maintaining the ability to replace initial Blueprints with generated C++ between Unreal Engine sessions.
 
 ---
 
 ### Cache Path
 
-Similar to Save Output Folder, it saves cache data into a folder. If left empty, it will save to the root of the BlueprintNativizationModule.
+Similar to Save Output Folder, saves cache data into a folder. Otherwise, saves it into the root of the BlueprintNativizationModule.
 
-To use the cache, navigate to the **Apply From Cache Nativization Result** tab. Note that applying cache assumes restarting the Unreal Engine project; otherwise, CDO classes won't initialize.
+To use cache, navigate to the **Apply From Cache Nativization Result** tab. Note that cache application requires a restart of Unreal Engine; otherwise, CDO classes won’t initialize.
 
-Leaving the **Cache Path** empty allows the cache to be used from the project's root.
+Leaving Cache Path empty will default the cache to the project’s root.
 
 ---
 
@@ -346,7 +342,7 @@ Leaving the **Cache Path** empty allows the cache to be used from the project's 
 </h2>
 
 <h1 align="center"> 
-Other Actions & Settings
+Other Actions and Settings
 </h1>
 
 <div align="center">
@@ -356,11 +352,11 @@ Other Actions & Settings
 <details>
   <summary>⚙️ Expand Description</summary>
 
-**Other Actions** contain additional useful functions, but aside from **Initialize Blueprint Initialization Module**, there's **Reset Names**. The project aims to carefully avoid name conflicts that may arise if you perform nativization in series without transferring the **Apply** results of generated code. Name conflicts are resolved using a specially designated Unique Name system. Although not mandatory, clearing unused cache in the system for temporarily allocated variables can often be beneficial with **Reset Names**. However, I recommend sequential steps during nativization with object transfers to BP or performing one large series. Partial caching applies only within a single Unreal Engine session.
+Other Actions includes several additional functions; apart from **Initialize Blueprint Initialization Module**, there’s **Reset Names**. The project aims to thoroughly avoid naming conflicts which may occur if nativization is performed in series without transferring Apply results to generated assets. Naming conflicts are resolved via an allocated Unique Name system, and clearing it (although not essential) is often useful, clearing excess caches in the temporary variable system. It’s advisable to conduct nativization step-by-step, transferring generated code objects to BP assets or in one big series. This is partly because the cache exists only within one Unreal Engine session, no longer.
 
-**PrintAllK2Nodes** – Ignore.
+**PrintAllK2Nodes** – ignore this.
 
-The widget settings are presumed to change from their state continuously. Permanent settings are located under **Blueprint Nativization V2 Editor Settings** in **Editor Settings**.
+Widget settings undergo regular updates based on state preferences. For more permanent configurations, refer to Blueprint Nativization V2 Editor Settings under Editor Settings.
 
 </details>
 
@@ -371,7 +367,7 @@ The widget settings are presumed to change from their state continuously. Perman
 </h2>
 
 <h1 align="center"> 
-Nativization Settings
+Nativization Settings Configuration
 </h1>
 
 <div align="center">
@@ -381,67 +377,67 @@ Nativization Settings
 <details>
   <summary>⚙️ Expand Description</summary>
 
-The primary mechanism for translating Blueprint functions into C++ lies in Translators. A **Translator** handles one or more types of K2Node, converting them into C++ code.
+The primary source for translating Blueprint functions into C++ are translators. **Translation** supports one or more types of K2Node and translates them into C++ code.
 
 ---
 
 ### Global Variable Name
 
-Used to avoid name conflicts.
+Prevents naming conflicts.
 
 ---
 
 ### Setup Action Object
 
-Represents the object that links **EU_NativizationTool** with various auxiliary widgets on the Blueprint side. It should remain unchanged.
+Links **EU_NativizationTool** to various auxiliary Widgets on the Blueprint side; it's recommended to avoid modifying this setting.
 
 ---
 
 ### Enable Generate Value Suffix
 
-Determines whether all generated variables in C++ code will have a **GeneratedValue** suffix. Disabling it results in cleaner code.
+Determines whether all generated variables in C++ code will have a GeneratedValue suffix. It's better to disable for cleaner code.
 
 ---
 
 ### Add BP Prefix To Parent Blueprint
 
-Controls whether existing Blueprint classes rebuilt with C++ inheritance gain the **"BP_"** prefix.
+Determines if converted Blueprint objects inheriting C++ classes retain the "BP_" prefix.
 
 ---
 
 ### Function Redirects
 
-A list of Blueprint-implemented functions. Such functions lack sufficient metadata to pinpoint which function invokes them elsewhere or where to override them in C++. This array maps the Blueprint-implemented function name and the original C++ function.
+Maps Blueprint Implemented names to the corresponding original C++ function. This resolves metadata insufficiencies related to function calls and overrides.
 
 ---
 
 ### Construction Descriptors
 
-Specifies constructors for structures where using a constructor is the most appropriate choice for initialization. In other cases, direct initialization through `.` is used. For example, instead of `FLinearColor(0.0,0.66,1.0,1.0)`, it will generate `FLinearColor LinearColor(); LinearColor.R = 1.0; LinearColor.G = 1.0;` etc. This is implemented to overcome the lack of reflection for such cases. For structures generated in Blueprints, a complete constructor is implemented by default.
+Constructor definitions for structures where initialization via a constructor is the most appropriate method. Otherwise, direct value setting via `.' is used, e.g., `FLinearColor(0.0,0.66,1.0,1.0)` switches to `FLinearColor LinearColor(); LinearColor.R = 1.0; LinearColor.G = 1.0;` and so forth. Designed due to lacking reflection support. Full constructors are implemented by default for Blueprints-generated structures.
 
 ---
 
 ### Ignore Class to Ref Generate
 
-Lists all classes that should not undergo nativization. Typically, this includes UI, Widget, etc. Avoid altering this widget or attempting to generate C++ for UI as it may lead to crashes.
+Includes classes excluded from nativization. Generally, UI, Widgets, and similar elements. Avoid attempting to generate C++ for such categories, or it may lead to crashes.
 
 ---
 
 ### Ignore Assets to Ref Generate
 
-The equivalent setting for ignoring assets.
+Same as above.
 
 ---
 
 ### Getter And Setter Description
 
-**FProperty** lacks information about the accessibility (private or public) of variables, which can cause a crash when attempting to access upper-level objects. For this purpose, the list allows mapping variables to operations such as **Get**, **Set**, or ignoring the variable.
+Contains functions for accessing variables to prevent crashes caused by attempting access to private properties. Defines operations like Get Set or complete variable omission.
 
 ---
 
 ### Code Editor
 
-Handles information about the visual presentation in the **Text Editor** part of the main widget. Primarily contains information about which substrings to highlight in specific colors.
+Information for the visual part of the Text Editor in the main widget, containing directives for substring color highlighting.
 
 ---
 
@@ -455,7 +451,7 @@ Handles information about the visual presentation in the **Text Editor** part of
 <h1 align="center"> 📜 License</h1>
 <h2 align="center">
   <strong>---></strong>
-  <strong> This project is distributed under the </strong> 
+  <strong> This project is distributed under </strong> 
   <a href="./LICENSE">SoulofAO License</a>
   <strong><---</strong>
 </h1>
@@ -463,14 +459,14 @@ Handles information about the visual presentation in the **Text Editor** part of
 ---
 
 <h2 align="center"> 
-📚 Check Out the Documentation 
+📚 Documentation
 </h2>
 
 <p align="center">
   <strong>---></strong>
-  <a href="/README.md">Русский</a> |
-  <a href="/docs/README.en.md">English</a> |
-  <a href="/docs/README.es.md">Spanish</a> |
-  <a href="/docs/README.zh.md">Chinese</a> |
+  <a href="/README.md">Russian</a> |
+  <a href="/README.en.md">English</a> |
+  <a href="/README.es.md">Spanish</a> |
+  <a href="/README.zh.md">Chinese</a> |
   <strong><---</strong>
 </p>
