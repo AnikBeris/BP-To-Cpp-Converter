@@ -2,7 +2,7 @@
 <p align="center">
   <strong>-------></strong>
   <a href="/README.ru.md">Русский</a> |
-  <a href="/docs/README.md">English</a>
+  <a href="/README.md">English</a>
   <strong><-------</strong>
 </p>
 
