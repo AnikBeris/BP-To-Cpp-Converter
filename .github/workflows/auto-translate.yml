@@ -1,0 +1,65 @@
+# структурка файлов по итогу:
+# ├ README.ru.md     # исходный
+# ├ README.md        # английский
+# ├ README.es.md     # испанский
+# ├ README.zh.md     # китайский
+
+name: Auto translate README
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  models: read
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - language: english
+            file: README.md
+          - language: spanish
+            file: README.es.md
+          - language: chinese
+            file: README.zh.md
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Translate README.ru.md
+        uses: FidelusAleksander/ai-translate-action@v1
+        id: translate
+        with:
+          text-file: README.ru.md
+          target-language: ${{ matrix.language }}
+          custom-instructions: |
+            1. Technical terms must remain in English.
+            2. Do not translate code blocks or URLs.
+            3. README.md must be written in clear technical English.
+
+      - name: Save translation
+        run: |
+          echo "${{ steps.translate.outputs.translated-text }}" > ${{ matrix.file }}
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "docs: update README translations"
+          title: "docs: update README translations"
+          body: |
+            Automatic translation from README.ru.md.
+            README.md is the English main version.
+          branch: docs/update-readme-translations
+          add-paths: |
+            README.md
+            README.es.md
+            README.zh.md
+          delete-branch: true
+          labels: |
+            documentation
+            translation
