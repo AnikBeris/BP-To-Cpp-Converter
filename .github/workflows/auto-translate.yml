@@ -18,8 +18,8 @@
 #   README.md
 #   README.es.md
 #   README.zh.md
-
 # ------------------------------------------------------------
+
 name: Auto translate README
 
 on:
@@ -32,9 +32,9 @@ permissions:
   models: read
 
 jobs:
-# ------------------------------------------------------------
-# JOB 1 - RU -> EN (канонический перевод)
-# ------------------------------------------------------------
+  # ------------------------------------------------------------
+  # JOB 1 - RU -> EN (канонический перевод)
+  # ------------------------------------------------------------
   translate-en:
     runs-on: ubuntu-latest
 
@@ -63,9 +63,9 @@ jobs:
           name: readme-en
           path: temp/README.en.tmp.md
 
-# ------------------------------------------------------------
-# JOB 2 - EN -> Other languages
-# ------------------------------------------------------------
+  # ------------------------------------------------------------
+  # JOB 2 - EN -> Other languages
+  # ------------------------------------------------------------
   translate-others:
     needs: translate-en
     runs-on: ubuntu-latest
@@ -107,9 +107,9 @@ jobs:
           name: ${{ matrix.language }}
           path: temp/${{ matrix.file }}
 
-# ------------------------------------------------------------
-# JOB 3 - Create PR
-# ------------------------------------------------------------
+  # ------------------------------------------------------------
+  # JOB 3 - Create PR
+  # ------------------------------------------------------------
   create-pr:
     needs: translate-others
     runs-on: ubuntu-latest
@@ -137,9 +137,9 @@ jobs:
           commit-message: "docs: update README translations"
           title: "docs: update README translations"
           body: |
-            Translation pipeline:
+            "Translation pipeline:
             RU -> EN (canonical)
-            EN -> other languages
+            EN -> other languages"
           branch: docs/update-readme-translations
           add-paths: |
             README.md
@@ -149,4 +149,3 @@ jobs:
           labels: |
             documentation
             translation
-
