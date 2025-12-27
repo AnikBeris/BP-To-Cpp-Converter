@@ -37,7 +37,6 @@ jobs:
   # ------------------------------------------------------------
   translate-en:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
@@ -55,7 +54,9 @@ jobs:
       - name: Save canonical English README
         run: |
           mkdir -p temp
-          echo "${{ steps.translate-en.outputs.translated-text }}" > temp/README.en.tmp.md
+          echo "$TRANSLATED_TEXT" | tee temp/README.en.tmp.md
+        env:
+          TRANSLATED_TEXT: ${{ steps.translate-en.outputs.translated-text }}
 
       - name: Upload English artifact
         uses: actions/upload-artifact@v4
@@ -69,7 +70,6 @@ jobs:
   translate-others:
     needs: translate-en
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         include:
@@ -99,7 +99,9 @@ jobs:
 
       - name: Save translation
         run: |
-          echo "${{ steps.translate.outputs.translated-text }}" > temp/${{ matrix.file }}
+          echo "$TRANSLATED_TEXT" | tee temp/${{ matrix.file }}
+        env:
+          TRANSLATED_TEXT: ${{ steps.translate.outputs.translated-text }}
 
       - name: Upload translation artifact
         uses: actions/upload-artifact@v4
@@ -113,7 +115,6 @@ jobs:
   create-pr:
     needs: translate-others
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
@@ -137,9 +138,9 @@ jobs:
           commit-message: "docs: update README translations"
           title: "docs: update README translations"
           body: |
-            "Translation pipeline:
+            Translation pipeline:
             RU -> EN (canonical)
-            EN -> other languages"
+            EN -> other languages
           branch: docs/update-readme-translations
           add-paths: |
             README.md
